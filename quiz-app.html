@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Challenge - Mnemonics Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="quiz-styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="images.png" alt="Britannica Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Games & Quizzes
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        <!-- Navigation Breadcrumb - Home screen only -->
+        <div id="breadcrumb-nav" class="d-none">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Britannica</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Educational Quizzes</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="quiz-container">
+            <div class="quiz-background">
+                <div class="quiz-card">
+                    <div class="quiz-category">Britannica Education</div>
+                    <h1 class="quiz-title">Can You Remember These Mnemonics? Quiz</h1>
+                    <button id="start-btn" class="btn btn-primary btn-lg">Start</button>
+                    <div class="quiz-info">
+                        <span>14 Questions</span>
+                        <div class="form-check form-switch">
+                            <label class="form-check-label" for="timer-bonus">Timer Bonus</label>
+                            <input class="form-check-input" type="checkbox" id="timer-bonus" checked>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="d-none">
+            <div class="quiz-header">
+                <h2 class="quiz-title-small">Test Your Knowledge of Mnemonics</h2>
+                <div class="quiz-progress">
+                    <div class="timer-circle">
+                        <span id="timer-count">30</span>
+                    </div>
+                    <div class="question-progress">
+                        <span id="current-question">1</span> of <span id="total-questions">14</span>
+                    </div>
+                    <div class="quiz-score">
+                        Score: <span id="current-score">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <h3 id="mnemonic-display" class="mnemonic-text">Never Eat Shredded Wheat</h3>
+                
+                <div class="options-grid">
+                    <div class="option" data-correct="true">
+                        <span class="option-text">compass directions</span>
+                        <span class="option-icon correct-icon d-none">✓</span>
+                        <span class="option-icon incorrect-icon d-none">✗</span>
+                    </div>
+                    <div class="option">
+                        <span class="option-text">ancient grains</span>
+                        <span class="option-icon correct-icon d-none">✓</span>
+                        <span class="option-icon incorrect-icon d-none">✗</span>
+                    </div>
+                    <div class="option">
+                        <span class="option-text">Allied powers in World War II</span>
+                        <span class="option-icon correct-icon d-none">✓</span>
+                        <span class="option-icon incorrect-icon d-none">✗</span>
+                    </div>
+                    <div class="option">
+                        <span class="option-text">presidents represented on Mount Rushmore</span>
+                        <span class="option-icon correct-icon d-none">✓</span>
+                        <span class="option-icon incorrect-icon d-none">✗</span>
+                    </div>
+                </div>
+
+                <div class="next-button-container">
+                    <button id="next-btn" class="btn btn-primary" disabled>
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div id="hint-container" class="hint-container">
+                    <div class="hint-icon">💡</div>
+                    <div id="hint-text" class="hint-text">
+                        Starting at the top and going clockwise, compass directions are north, east, south, and west.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="d-none">
+            <div class="results-tabs">
+                <div class="tab-header">
+                    <div class="tab-item active" data-tab="score">Score</div>
+                    <div class="tab-item" data-tab="answers">Answers</div>
+                    <div class="tab-item" data-tab="leaderboard">Leaderboard</div>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="score-tab">
+                        <div class="score-container">
+                            <div class="final-score">
+                                <h2 class="result-quiz-title">Test Your Knowledge of Mnemonics</h2>
+                                <div class="congrats-text">Congrats!</div>
+                                <div class="score-circle">
+                                    <div class="score-text">
+                                        <span id="correct-answers">3</span>/<span id="total-questions-result">14</span>
+                                    </div>
+                                    <div class="points-text"><span id="total-points">1500</span> points</div>
+                                </div>
+                                <button id="play-again-btn" class="btn btn-outline-primary">
+                                    <i class="fas fa-redo"></i> Play Again
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="answers-tab">
+                        <!-- Answers content would go here -->
+                        <div class="answers-container">
+                            <p>Answers tab content</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="leaderboard-tab">
+                        <div class="leaderboard-container">
+                            <div class="leaderboard-scores">
+                                <h3>Top Scores for this Quiz</h3>
+                                <p class="text-muted">(updated weekly)</p>
+                                <ol class="top-scores">
+                                    <li>
+                                        <span class="player-name">Alex Johnson</span>
+                                        <span class="player-score">6,500</span>
+                                    </li>
+                                    <li>
+                                        <span class="player-name">Maria Garcia</span>
+                                        <span class="player-score">6,000</span>
+                                    </li>
+                                    <li>
+                                        <span class="player-name">Taylor Smith</span>
+                                        <span class="player-score">4,500</span>
+                                    </li>
+                                    <li>
+                                        <span class="player-name">SamuelK</span>
+                                        <span class="player-score">4,500</span>
+                                    </li>
+                                    <li>
+                                        <span class="player-name">Jordan Williams</span>
+                                        <span class="player-score">3,460</span>
+                                    </li>
+                                </ol>
+                                <div class="your-score">
+                                    <p>Climb the Leaderboard! <a href="#">Login to save your progress.</a></p>
+                                    <div class="your-score-display">
+                                        <span>You</span>
+                                        <span>1500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz-score-breakdown">
+                                <h3>This Quiz</h3>
+                                <div class="score-item">
+                                    <div class="score-label">
+                                        <i class="fas fa-check-circle text-primary"></i> 3 Correct
+                                    </div>
+                                    <div class="score-value">1200 Points</div>
+                                </div>
+                                <div class="score-item">
+                                    <div class="score-label">
+                                        <i class="fas fa-clock text-primary"></i> Time Bonus
+                                    </div>
+                                    <div class="score-value">300 Points</div>
+                                </div>
+                                <div class="total-score">
+                                    <div class="score-number">1500</div>
+                                    <div class="score-label">POINTS</div>
+                                    <div class="score-max">of 7000</div>
+                                </div>
+                                <button id="play-again-btn2" class="btn btn-outline-primary">
+                                    <i class="fas fa-redo"></i> Play Again
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="subscribe-section">
+                <h3>History at your fingertips – Sign up here to see what happened On This Day, every day in your inbox!</h3>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+                <p class="disclaimer">
+                    By signing up for this email, you are agreeing to news, offers, and information from Encyclopaedia Britannica.
+                    <a href="#">Click here to view our Privacy Notice</a>. Easy unsubscribe links are provided in every email.
+                </p>
+            </div>
+            
+            <div class="social-links">
+                <p>STAY CONNECTED</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">About Us & Legal Info</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Diversity</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                <p>©2025 Encyclopaedia Britannica, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="quiz-engine.js"></script>
+</body>
+</html>
