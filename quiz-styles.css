@@ -40,7 +40,7 @@ header {
 }
 
 .quiz-background {
-    background-image: url('https://placehold.co/800x500/yellow/white');
+    background-image: url('bckimg.jpg');
     background-size: cover;
     background-position: center;
     height: 500px;
