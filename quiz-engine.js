@@ -28,54 +28,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Game data
     const gameData = [
         {
-            phrase: "Never Eat Shredded Wheat",
+            phrase: "Which is the smallest country in the world by area?",
             choices: [
-                { text: "compass directions", correct: true },
-                { text: "ancient grains", correct: false },
-                { text: "Allied powers in World War II", correct: false },
-                { text: "presidents represented on Mount Rushmore", correct: false }
+                { text: "Monaco", correct: false },
+                { text: "Vatican City", correct: true },
+                { text: "Liechtenstein", correct: false },
+                { text: "San Marino", correct: false }
             ],
-            clue: "Starting at the top and going clockwise, compass directions are north, east, south, and west."
+            clue: "Vatican City, an independent city-state within Rome, covers just about 44 hectares (110 acres)."
         },
         {
-            phrase: "ROY G. BIV",
+            phrase: "What is the boiling point of water at sea level?",
             choices: [
-                { text: "what to do in case of a fire", correct: false },
-                { text: "trigonometric functions", correct: false },
-                { text: "colors of the rainbow", correct: true },
-                { text: "organ systems of the human body", correct: false }
+                { text: "90°C", correct: false },
+                { text: "100°C", correct: true },
+                { text: "110°C", correct: false },
+                { text: "120°C", correct: false }
             ],
-            clue: "Starting from the outside and working inward, a rainbow's colors are traditionally broken up into red, orange, yellow, green, blue, indigo, and violet."
+            clue: "At standard atmospheric pressure, water boils at 100°C (212°F)."
         },
         {
-            phrase: "My Very Eager Mother Just Served Us Nachos",
+            phrase: "Who invented the telephone?",
             choices: [
-                { text: "planets in the solar system", correct: true },
-                { text: "Great Lakes of North America", correct: false },
-                { text: "Seven Wonders of the Ancient World", correct: false },
-                { text: "taxonomic classification levels", correct: false }
+                { text: "Nikola Tesla", correct: false },
+                { text: "Thomas Edison", correct: false },
+                { text: "Alexander Graham Bell", correct: true },
+                { text: "Albert Einstein", correct: false }
             ],
-            clue: "In order from the Sun: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune."
+            clue: "Alexander Graham Bell was awarded the first US patent for the telephone in 1876."
         },
         {
-            phrase: "Please Excuse My Dear Aunt Sally",
+            phrase: "Which language has the most native speakers in the world?",
             choices: [
-                { text: "types of plants", correct: false },
-                { text: "order of operations in math", correct: true },
-                { text: "classification of living things", correct: false },
-                { text: "elements in the periodic table", correct: false }
+                { text: "English", correct: false },
+                { text: "Hindi", correct: false },
+                { text: "Spanish", correct: false },
+                { text: "Mandarin Chinese", correct: true }
             ],
-            clue: "Parentheses, Exponents, Multiplication/Division, Addition/Subtraction."
+            clue: "Mandarin Chinese has over 900 million native speakers, the most of any language."
         },
         {
-            phrase: "HOMES",
+            phrase: "What is the capital of Canada?",
             choices: [
-                { text: "types of government", correct: false },
-                { text: "parts of a cell", correct: false },
-                { text: "Great Lakes", correct: true },
-                { text: "branches of science", correct: false }
+                { text: "Toronto", correct: false },
+                { text: "Vancouver", correct: false },
+                { text: "Ottawa", correct: true },
+                { text: "Montreal", correct: false }
             ],
-            clue: "The five Great Lakes: Huron, Ontario, Michigan, Erie, Superior."
+            clue: "Ottawa, not Toronto or Vancouver, is the capital city of Canada."
         }
     ];
     
